@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: #070b14;
+  color: #ffffff;
+}
+
+::-webkit-scrollbar { width: 0; height: 0; }
+
+@layer utilities {
+  .surface {
+    background-color: #0d1220;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .surface-elevated {
+    background-color: #111826;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .accent-warm { color: #e8a840; }
+  .accent-cool { color: #7dd3fc; }
+
+  .text-primary   { color: rgba(255,255,255,1.00); }
+  .text-secondary { color: rgba(255,255,255,0.60); }
+  .text-tertiary  { color: rgba(255,255,255,0.35); }
+  .text-muted     { color: rgba(255,255,255,0.18); }
+
+  .temp-display {
+    font-size: clamp(5rem, 14vw, 10rem);
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    color: #ffffff;
+  }
+
+  .label-caps {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+  }
+
+  .fade-up {
+    animation: fadeUp 0.5s ease both;
+  }
+  .fade-up-1 { animation-delay: 0.05s; opacity: 0; }
+  .fade-up-2 { animation-delay: 0.12s; opacity: 0; }
+  .fade-up-3 { animation-delay: 0.20s; opacity: 0; }
+  .fade-up-4 { animation-delay: 0.28s; opacity: 0; }
+
+  .shimmer-dark {
+    background: linear-gradient(
+      90deg,
+      #0d1220 0%,
+      #151e30 50%,
+      #0d1220 100%
+    );
+    background-size: 400% 100%;
+    animation: shimmer 2s ease infinite;
+  }
+
+  .divider {
+    height: 1px;
+    background: rgba(255,255,255,0.06);
+  }
+
+  .icon-glow {
+    filter: drop-shadow(0 0 16px rgba(232, 168, 64, 0.25));
+  }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -400% 0; }
+  100% { background-position:  400% 0; }
+}
